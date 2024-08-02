@@ -8,5 +8,8 @@ number_3 = (number // 100) % 10
 number_4 = (number // 10) % 10
 number_5 = (number % 10)
 
-#вивід цифр у зворотньому порядку
-print(number_5,number_4,number_3,number_2,number_1)
+#формування числа у зворотньому порядку
+inverse_number = (number_5*10000+number_4*1000+number_3*100+number_2*10+number_1)
+
+#вивід числа у зворотньому порядку
+print(inverse_number)
