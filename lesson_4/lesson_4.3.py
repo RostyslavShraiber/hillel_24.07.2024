@@ -1,24 +1,14 @@
-import string
+import random
 
-#отримуємо значення рядка
-input_string = input("Введіть рядок: ")
+# Створюємо список з випадкових чисел
+original_list = [random.randint(1,10) for i in range(random.randint(3, 10))]
+print("Оригінальний список:", original_list)
 
-#перетворюємо першу літеру кожного слова на велику
-input_string = input_string.title()
-
-#визначаємо значення очищеного рядка від символів та пробілів (за замовчуванням)
-clean_string = ""
-
-#визначаємо значення очищеного рядка від символів та пробілів на основі отриманого рядка з поля вводу
-for char in input_string:
-    if char not in string.punctuation and char != " ":
-        clean_string += char
-
-#створюємо хештег (додаємо # на початок)
-hashtag = "#" + clean_string
-
-#проводимо перевірку на довжину хештегу (довжина не повинна перевищувати 140 символів) та друкуємо його
-if len(hashtag) <= 140:
-    print(hashtag)
+# Створюємо новий список з 3 елементів: першого, третього і другого з кінця
+if len(original_list) >= 3:
+    new_list = [original_list[0], original_list[2], original_list[-2]]
 else:
-    print(hashtag[:140])
+    new_list = []
+
+#Виводимо новий список
+print("Новий список:", new_list)
