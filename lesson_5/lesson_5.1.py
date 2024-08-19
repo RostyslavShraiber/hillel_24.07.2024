@@ -12,7 +12,7 @@ else:
         print(False)
     elif any(char in string.punctuation.replace('_', '') for char in my_string):
         print(False)
-    elif my_string.count('_') > 1:
+    elif "__" in my_string:
         print(False)
     else:
         print(True)
