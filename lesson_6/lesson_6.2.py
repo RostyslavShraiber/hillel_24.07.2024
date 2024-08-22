@@ -2,11 +2,12 @@ user_time = int(input("Введіть число (від 0 до 8640000): "))
 
 if 0 <= user_time <= 8640000:
 
-    div, mod = divmod(user_time, (24*60*60))
-    days = str(div)
+    days, mod = divmod(user_time, (24*60*60))
+    hours, mod = divmod(mod, (60 * 60))
+    minutes, seconds = divmod(mod, 60)
 
-    last_digit = div % 10
-    last_two_digits = div % 100
+    last_two_digits = days % 100
+    last_digit = days % 10
 
     if last_two_digits in range(11, 20):
         name_days = "днів"
@@ -16,15 +17,6 @@ if 0 <= user_time <= 8640000:
         name_days = "день"
     else:
         name_days = "днів"
-
-    div, mod = divmod(mod, (60*60))
-    hours = str(div).zfill(2)
-
-    div, mod = divmod(mod, 60)
-    minutes = str(div).zfill(2)
-    seconds = str(mod).zfill(2)
-
-    print(f'{days} {name_days}, {hours}:{minutes}:{seconds}')
-
+    print(f'{days} {name_days}, {str(hours).zfill(2)}:{str(minutes).zfill(2)}:{str(seconds).zfill(2)}')
 else:
     print("Будь ласка, введіть число в діапазоні від 0 до 8640000 (див. підказку при введенні)")
