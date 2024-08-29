@@ -1,4 +1,4 @@
-def correct_sentence(text):
+def correct_sentence(text: str) -> str:
 
     #Перевірка чи перша літера стрічки з маленької літери. У противному випадку зробити літеру великою
     if text[0].islower():

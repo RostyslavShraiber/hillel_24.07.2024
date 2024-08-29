@@ -1,4 +1,4 @@
-def common_elements():
+def common_elements() -> set[int]:
 
     #Створюємо першу множину (числа кратні 3)
     set_1 = set(range(0, 100, 3))

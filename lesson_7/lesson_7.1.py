@@ -1,4 +1,4 @@
-def say_hi(name, age):
+def say_hi(name: str, age: int) -> str:
 
     #Формує привітальне повідомлення з ім'ям та віком.
     introduction = f"Hi. My name is {name} and I'm {age} years old"
