@@ -12,31 +12,30 @@ class Product:
 
 class Customer:
 
-    def __init__(self, name, surname, numberphone):
+    def __init__(self, name: str, surname: str, numberphone: str):
         self.name = name
         self.surname = surname
         self.numberphone = numberphone
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'{self.name} {self.surname}'
 
 
 class Purchase:
-    def __init__(self, user):
-        self.products = {}
+    def __init__(self, user: Customer):
+        self.products: dict[Product, int] = {}  # Словник товарів і їх кількості
         self.user = user
-        self.total = 0
 
-    def add_item(self, item, cnt):
+    def add_item(self, item: Product, cnt: int) -> None:
         """Додає товар у кошик або оновлює його кількість."""
         self.products[item] = cnt  # Перезаписуємо кількість товару
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Повертає інформацію про замовлення у форматі рядка."""
         product_list = "\n".join([f'{product.name}: {cnt} pcs.' for product, cnt in self.products.items()])
         return f'User: {self.user}\nItems:\n{product_list}'
 
-    def get_total(self):
+    def get_total(self) -> float:
         """Обчислює загальну вартість замовлення."""
         total = sum(item.price * cnt for item, cnt in self.products.items())
         return total
