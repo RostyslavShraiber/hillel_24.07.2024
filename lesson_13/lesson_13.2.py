@@ -1,39 +1,39 @@
 class Counter:
-    def __init__(self, current=1, min_value=0, max_value=10):
-        self.current = current
-        self.min_value = min_value
-        self.max_value = max_value
+    def __init__(self, current: int = 1, min_value: int = 0, max_value: int = 10):
+        self.current: int = current
+        self.min_value: int = min_value
+        self.max_value: int = max_value
 
-    def set_current(self, start):
+    def set_current(self, start: int) -> None:
         if start < self.min_value or start > self.max_value:
             raise ValueError(f"Current value must be between {self.min_value} and {self.max_value}.")
         self.current = start
 
-    def set_max(self, max_max):
+    def set_max(self, max_max: int) -> None:
         if max_max < self.min_value:
             raise ValueError("Maximum value must be greater than or equal to the minimum value.")
         self.max_value = max_max
         if self.current > self.max_value:
             self.current = self.max_value
 
-    def set_min(self, min_min):
+    def set_min(self, min_min: int) -> None:
         if min_min > self.max_value:
             raise ValueError("Minimum value must be less than or equal to the maximum value.")
         self.min_value = min_min
         if self.current < self.min_value:
             self.current = self.min_value
 
-    def step_up(self):
+    def step_up(self) -> None:
         if self.current >= self.max_value:
             raise ValueError("Reached the maximum value!")
         self.current += 1
 
-    def step_down(self):
+    def step_down(self) -> None:
         if self.current <= self.min_value:
             raise ValueError("Reached the minimum value!")
         self.current -= 1
 
-    def get_current(self):
+    def get_current(self) -> int:
         return self.current
 
 
