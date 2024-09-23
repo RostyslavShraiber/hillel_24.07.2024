@@ -9,7 +9,7 @@ class Student(Human):
     def __str__(self) -> str:
         return f'Student: {self.first_name} {self.last_name}, {self.gender}, {self.age} years old, Record Book: {self.record_book}'
 
-    def __eq__ (self, other):
+    def __eq__(self, other):
         if not isinstance(other, Student):
             return NotImplemented
         else:
